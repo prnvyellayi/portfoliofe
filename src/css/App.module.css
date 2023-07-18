@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,300');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+.App {
+  text-align: center;
+  background-color: #1f1f38;
+  background: repeating-linear-gradient(
+    90deg,
+    #1f1f38,
+    #1f1f38 5px,
+    #1f1f30 5px,
+    #1f1f30 10px
+
+  );
+  display: flex;
+  font-weight: 600;
+  font-family: Poppins;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

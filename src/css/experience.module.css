@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,300");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  background-color: #1f1f38;
+  background: repeating-linear-gradient(
+    90deg,
+    #1f1f38,
+    #1f1f38 5px,
+    #1f1f30 5px,
+    #1f1f30 10px
+  );
+  overflow-x: scroll;
+  overflow-y: hidden;
+  align-items: center;
+  font-family: montserrat;
+  color: white;
+}
+
+.swiperdiv {
+    width: 90%;
+}
+
+.slidediv {
+    display: flex;
+    flex-direction: column;
+    height: 330px;
+    width: 330px;
+    background-color: #9797dd;
+    border: 3px solid white;
+    border-radius: 30px;
+    color: white;
+    font-family: poppins;
+    padding: 20px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content {
+    font-size: 20px;
+}
+
+.tagdiv {
+    display: inline;
+    text-align: center;
+}
+
+.tagspan {
+    font-size: 14px;
+    color: #555;
+    margin-right: 4px;
+    text-align: center;
+}
+
+.hr {
+    width: 80%;
+}
+
+.slidediv:hover {
+    background-color: white;
+    color: #4db5ff
+}
+
+.bgspan {
+  font-family: poppins;
+  position: fixed;
+  font-weight: 700;
+  margin-top: 3%;
+  margin-left: 55%;
+  font-size: 150px;
+  opacity: 0.2;
+  color: white;
+  z-index: 2;
+}
+
+.social {
+  display: flex;
+  height: 95vh;
+  width: 7vw;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  justify-content: flex-end;
+  /* padding-bottom: 20px; */
+  padding-bottom: 10%;
+}
+
+.icon1 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 26px;
+  width: 26px;
+}
+
+.icon2 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1.1s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 26px;
+  width: 26px;
+}
+
+.icon3 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 26px;
+  width: 26px;
+}
+
+.linesocial {
+  border-left: 1px solid #4db5ff;
+  width: 1px;
+  height: 140px;
+  animation-name: lineappear;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1.2);
+}
+
+@keyframes iconappear {
+  from {
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 26px;
+    width: 26px;
+    opacity: 1;
+  }
+}
+
+@keyframes lineappear {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 140px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
