@@ -29,7 +29,7 @@ const ChatGPT = () => {
     let resp = { role: "assistant", content: "Typing..." };
     setMessages([...messages, msg, resp]);
     await axios
-      .post("http://localhost:8080/chat", { msg })
+      .post("https://portfolio-be-jnai.onrender.com/chat", { msg })
       .then((res) => {
         setResponse(res.data);
       })
