@@ -67,6 +67,7 @@ const Hello = () => {
           <Linkrouter to='/about'>
             <img src={profilepic} className={styles.image}></img>
           </Linkrouter>
+          <span style={{color: "#4db5ff"}}>About Me!</span>
         </ScrollAnimation>
         <div className={styles.anidiv}>
           <div className={styles.contact}>
