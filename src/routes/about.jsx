@@ -14,7 +14,7 @@ const About = () => {
   },[]);
   return (
     <>
-      <span className={styles.bgspan}>SKILLS</span>
+      <span className={styles.bgspan}>ABOUT</span>
       <div className={styles.main}>
         <div className={styles.content}>
           <p className={styles.para}>

@@ -72,8 +72,8 @@
 @keyframes image-travel {
   from {
     rotate: 0deg;
-    margin-right: 767px;
-    margin-top: 195px;
+    margin-right: 50vw;
+    margin-top: 155px;
   }
   to {
     rotate: 360deg;

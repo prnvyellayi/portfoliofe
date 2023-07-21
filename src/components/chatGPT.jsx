@@ -60,12 +60,12 @@ const ChatGPT = () => {
 
   return (
     <>
-      <div id="gpt" className={styles.outerdiv}>
+      <div id="#gpt" className={styles.outerdiv}>
         <ScrollAnimation
           animateIn="animate__slideInLeft"
           className={styles.innerdiv1}
-          duration={0.8}
-          offset={250}
+          duration={1}
+          animateOnce={true}
         >
           <span className={styles.chatbothead}>
             Chat-Bot{" "}
@@ -86,7 +86,7 @@ const ChatGPT = () => {
           className={styles.innerdiv}
           style={{ backgroundImage: `url(${chatbg})` }}
           duration={0.8}
-          offset={250}
+          animateOnce={true}
         >
           <div className={styles.chatdiv}>
             {messages.map((msg) => {

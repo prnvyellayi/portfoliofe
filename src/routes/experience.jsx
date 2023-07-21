@@ -26,13 +26,13 @@ const Experience = () => {
   const SocialIconsDiv = () => {
     return (
       <div className={styles.social}>
-        <a href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/">
+        <a target="_blank" href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/">
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
-        <a href="https://github.com/prnvyellayi">
+        <a target="_blank" href="https://github.com/prnvyellayi">
           <AiFillGithub color="#4db5ff" className={styles.icon2} />
         </a>
-        <a href="https://www.instagram.com/_.psy_fi._/">
+        <a target="_blank" href="https://www.instagram.com/_.psy_fi._/">
           <AiFillInstagram color="#4db5ff" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>

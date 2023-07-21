@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../css/hello.module.css";
 import profilepic from "../images/profile.jpeg";
-import { Link } from "react-scroll";
 import { Link as Linkrouter } from "react-router-dom";
 import pdfBase64 from "../util";
 import { Button } from "@react-email/button";
@@ -21,16 +20,26 @@ const Hello = () => {
     downloadLink.click();
   };
 
+  const handlescroll = () => {
+    window.scroll({
+      top: 720,
+      behavior: 'smooth'
+    })
+  }
+
   const SocialIconsDiv = () => {
     return (
       <div className={styles.social}>
-        <a href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/">
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+        >
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
-        <a href="https://github.com/prnvyellayi">
+        <a target="_blank" href="https://github.com/prnvyellayi">
           <AiFillGithub color="#4db5ff" className={styles.icon2} />
         </a>
-        <a href="https://www.instagram.com/_.psy_fi._/">
+        <a target="_blank" href="https://www.instagram.com/_.psy_fi._/">
           <AiFillInstagram color="#4db5ff" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
@@ -60,14 +69,14 @@ const Hello = () => {
             <button onClick={downloadPDF} className={styles.button}>
               My Resume
             </button>
-            <Link to="gpt" smooth={true} className={styles.button}>
+            <button onClick={handlescroll} className={styles.button}>
               Talk to Me!
-            </Link>
+            </button>
           </div>
-          <Linkrouter to='/about'>
+          <Linkrouter to="/about">
             <img src={profilepic} className={styles.image}></img>
           </Linkrouter>
-          <span style={{color: "#4db5ff"}}>About Me!</span>
+          <span style={{ color: "#4db5ff" }}>About Me!</span>
         </ScrollAnimation>
         <div className={styles.anidiv}>
           <div className={styles.contact}>
