@@ -60,7 +60,7 @@
 }
 
 .para {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   color: white;
   font-family: Montserrat;
@@ -73,7 +73,7 @@
   from {
     rotate: 0deg;
     margin-right: 50vw;
-    margin-top: 155px;
+    margin-top: 150px;
   }
   to {
     rotate: 360deg;

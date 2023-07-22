@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React, { useCallback } from "react";
 import styles from "../css/about.module.css";
 import profilepic from "../images/profile.jpeg";
 import { loadFull } from "tsparticles";
@@ -6,12 +6,11 @@ import Particles from "react-particles";
 import options from "../config/home-config.json";
 import { Link } from "react-router-dom";
 
-
 const About = () => {
   const particlesInit = useCallback(async (main) => {
     console.log(main);
     await loadFull(main);
-  },[]);
+  }, []);
   return (
     <>
       <span className={styles.bgspan}>ABOUT</span>
@@ -24,16 +23,16 @@ const About = () => {
 
           <p className={styles.para}>
             I love to bring beautiful designs to life with my skills. I am a
-            dedicated worker and I keep solid priority towards work.
+            dedicated worker and I keep solid priority towards my work.
           </p>
 
           <p className={styles.para}>
             I am a sports enthusiast and a Cricket player, keen to try out any
-            new sport that I possibly can.
+            new sport that I possibly can. I also am an avid music listener.
           </p>
           <span></span>
         </div>
-        <Link className={styles.imagediv} to='/'>
+        <Link className={styles.imagediv} to="/">
           <img src={profilepic} className={styles.image}></img>
         </Link>
       </div>

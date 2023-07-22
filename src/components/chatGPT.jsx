@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "../css/chatgpt.module.css";
 import { AiOutlineSend } from "react-icons/ai";
@@ -12,6 +12,7 @@ const ChatGPT = () => {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [messages, setMessages] = useState([]);
+  const bottomRef = useRef(null);
 
   useEffect(() => {
     if (response != "") {
@@ -21,6 +22,12 @@ const ChatGPT = () => {
       setMessages([...copyArr, resp]);
     }
   }, [response]);
+
+  useEffect(() => {
+    // 👇️ scroll to bottom every time messages change
+    if (messages.length !== 0)
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -92,6 +99,7 @@ const ChatGPT = () => {
             {messages.map((msg) => {
               return messageRender(msg.role, msg.content);
             })}
+            <div ref={bottomRef} />
           </div>
           <form className={styles.form} onSubmit={handleSubmit}>
             <input

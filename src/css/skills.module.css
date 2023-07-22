@@ -2,11 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,300");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
+
 .main {
-  display: flex;
-  flex-direction: row;
-  width: fit-content;
-  height: 100vh;
   background-color: #1f1f38;
   background: repeating-linear-gradient(
     90deg,
@@ -15,12 +12,27 @@
     #1f1f30 5px,
     #1f1f30 10px
   );
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+.slideshow {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 100vh;
   overflow-x: scroll;
   overflow-y: hidden;
   align-items: center;
   font-family: montserrat;
   color: white;
   padding-left: 30%;
+}
+
+.particle {
+  z-index: 3;
 }
 
 .title {
@@ -36,7 +48,7 @@
 }
 
 .hr {
-  width: 90%;
+  width: 280px;
   margin-bottom: 30px;
 }
 
@@ -54,7 +66,7 @@
 .skilldiv {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: fit-content;
   height: 300px;
   padding: 20px;
   background-color: #9797dd;
@@ -115,6 +127,13 @@
   animation-name: lineappear;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(1, 0, 0, 1.2);
+}
+
+.back {
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  z-index: 1;
 }
 
 @keyframes iconappear {

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "../css/skills.module.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
-import options from '../config/particlejs-config-skills.json'
+import options from "../config/gpt-config.json";
 import { loadFull } from "tsparticles";
 import Particles from "react-particles";
+import { Link } from "react-router-dom";
 import {
   BiLogoReact,
   BiLogoNodejs,
   BiLogoJavascript,
   BiSolidFileCss,
-  BiCodeCurly
+  BiCodeCurly,
+  BiArrowBack,
 } from "react-icons/bi";
 
 const Skills = () => {
@@ -44,19 +46,19 @@ const Skills = () => {
   const getIcon = (title) => {
     switch (title) {
       case "Javascript":
-        return(<BiLogoJavascript size={35} />)
+        return <BiLogoJavascript size={35} />;
         break;
       case "React.js":
-        return(<BiLogoReact size={35} />)
+        return <BiLogoReact size={35} />;
         break;
       case "Node.js":
-        return(<BiLogoNodejs size={35} />)
+        return <BiLogoNodejs size={35} />;
         break;
       case "HTML/CSS":
-        return(<BiSolidFileCss size={35} />)
+        return <BiSolidFileCss size={35} />;
         break;
       case "C language":
-        return(<BiCodeCurly size={35} />)
+        return <BiCodeCurly size={35} />;
         break;
       default:
         break;
@@ -64,15 +66,16 @@ const Skills = () => {
   };
 
   const particlesInit = async (main) => {
-    console.log(main);
     await loadFull(main);
   };
-
 
   const SocialIconsDiv = () => {
     return (
       <div className={styles.social}>
-        <a target="_blank" href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/">
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+        >
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
         <a target="_blank" href="https://github.com/prnvyellayi">
@@ -86,33 +89,60 @@ const Skills = () => {
     );
   };
 
+  const scrollref = useRef(null);
+
+  const onWheel = (e) => {
+    var container = scrollref.current;
+    var containerScrollPosition =
+      document.getElementById("container").scrollLeft;
+    if (container) {
+      if (e.deltaY == 0) return;
+      container.scrollTo({
+        left: containerScrollPosition + e.deltaY,
+        behaviour: "smooth",
+      });
+    }
+  };
+
   return (
     <>
-      <span className={styles.bgspan}>SKILLS</span>
-      <SocialIconsDiv />
       <div className={styles.main}>
-        {skills.map((each, index) => {
-          return (
-            <>
+        <Link className={styles.back} to="/">
+          <BiArrowBack size={35} color="#4db5ff" />
+        </Link>
+        <span className={styles.bgspan}>SKILLS</span>
+        <SocialIconsDiv />
+        <div
+          ref={scrollref}
+          className={styles.slideshow}
+          onWheel={(e) => onWheel(e)}
+          id="container"
+        >
+          {skills.map((each, index) => {
+            return (
               <ScrollAnimation
                 className={styles.skilldiv}
-                animateIn='animate__backInDown'
+                animateIn="animate__backInDown"
                 delay={`${index * 400}`}
                 duration={0.5}
               >
-                <span className={styles.title}>{each.title}{getIcon(each.title)}</span>
+                <span className={styles.title}>
+                  {each.title}
+                  {getIcon(each.title)}
+                </span>
                 <hr className={styles.hr}></hr>
                 <span className={styles.content}>{each.content}</span>
               </ScrollAnimation>
-            </>
-          );
-        })}
+            );
+          })}
+        </div>
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            options={options}
+            className={styles.particle}
+          />
       </div>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={options}
-      />
     </>
   );
 };

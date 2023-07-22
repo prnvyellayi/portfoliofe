@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import styles from "../css/experience.module.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { BiArrowBack } from "react-icons/bi";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -10,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { loadFull } from "tsparticles";
 import Particles from "react-particles";
 import options from "../config/particlejs-config.json";
+import { Link } from "react-router-dom";
 import {
   EffectCoverflow,
   Pagination,
@@ -64,11 +66,12 @@ const Experience = () => {
       content:
         "Created a Store web-app to shop any clothing using React.js and it's libraries",
       hash: ["#React.js", "#JavaScrpt", "#HTML", "#CSS"],
-    },
+    }
   ];
 
   return (
     <>
+      <Link className={styles.back} to='/'><BiArrowBack size={35} color="#4db5ff"/></Link>
       <span className={styles.bgspan}>Work</span>
       <SocialIconsDiv />
       <div className={styles.main}>
