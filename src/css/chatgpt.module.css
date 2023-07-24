@@ -41,6 +41,10 @@
   align-items: center;
 }
 
+.innerdiv2 {
+  display: none;
+}
+
 .form {
   display: flex;
   flex-direction: row;
@@ -123,7 +127,7 @@
 
 .chatques {
   text-align: left;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-top: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -185,6 +189,10 @@
   font-size: 15px;
 }
 
+.footer {
+  display: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -199,4 +207,63 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media screen and (max-width : 960px) {
+  .outerdiv {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .innerdiv1 {
+    display: none;
+  }
+
+  .innerdiv2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .chatul {
+    padding: 0;
+    width: fit-content;
+    gap: 2%;
+    flex-direction: row;
+  }
+
+  .chatbothead {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .chatques {
+    display: flex;
+    background-color: #555;
+    border: 1px solid #555;
+    color: white;
+    text-align: center;
+    padding-right: 15px;
+    margin: 0;
+    padding-top: 0px;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .chatques:hover {
+    background-color: white;
+  }
+
+  .innerdiv {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .chatbothead {
+    font-size: 24px;
+    font-weight: 400;
+  }
 }

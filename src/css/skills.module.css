@@ -15,6 +15,7 @@
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
   z-index: 2;
 }
 
@@ -159,8 +160,22 @@
 }
 
 @media screen and (max-width: 960px) {
-  .main {
-    flex-direction: column;
+  .bgspan {
+    margin-left: 10%;
+    font-size: 100px;
+  }
+
+  .skilldiv {
+    height: 280px;
+  }
+
+  .hr {
+    width: 240px;
+  }
+
+  .slideshow {
+    padding-left: 3%;
+    width: 100%;
   }
 }
 

@@ -96,6 +96,21 @@ const ChatGPT = () => {
           animateOnce={true}
         >
           <div className={styles.chatdiv}>
+            <div className={styles.innerdiv2}>
+              <span className={styles.chatbothead}>
+                Chat-Bot{" "}
+                <img src={robot} style={{ width: "33px", height: "33px" }} />
+              </span>
+              <span className={styles.chatbotask}>Ask me anything ❓</span>
+              <span style={{ color: "#4db5ff", fontWeight: "700" }}>
+                Ask me my:
+              </span>
+              <ul className={styles.chatul}>
+                <span className={styles.chatques}>Name?</span>
+                <span className={styles.chatques}>Experience?</span>
+                <span className={styles.chatques}>Skills?</span>
+              </ul>
+            </div>
             {messages.map((msg) => {
               return messageRender(msg.role, msg.content);
             })}

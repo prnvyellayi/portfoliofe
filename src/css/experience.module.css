@@ -15,60 +15,75 @@
     #1f1f30 5px,
     #1f1f30 10px
   );
-  overflow-x: scroll;
-  overflow-y: hidden;
   align-items: center;
   font-family: montserrat;
   color: white;
 }
 
 .swiperdiv {
-    width: 90%;
+  width: 70%;
+}
+
+.swiperslideclass {
+  width: 28%;
+  border-radius: 30px;
 }
 
 .slidediv {
-    display: flex;
-    flex-direction: column;
-    height: 330px;
-    width: 330px;
-    background-color: #9797dd;
-    border: 3px solid white;
-    border-radius: 30px;
-    color: white;
-    font-family: poppins;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 370px;
+  width: 60%;
+  margin-left: 15%;
+  background-color: #9797dd;
+  border: 3px solid white;
+  border-radius: 30px;
+  color: white;
+  font-family: poppins;
+  padding: 20px;
 }
 
 .title {
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titleexp {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .content {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+.contentexp {
+  font-size: 24px;
 }
 
 .tagdiv {
-    display: inline;
-    text-align: center;
+  display: inline;
+  text-align: center;
 }
 
 .tagspan {
-    font-size: 14px;
-    color: #555;
-    margin-right: 4px;
-    text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-right: 4px;
+  text-align: center;
 }
 
 .hr {
-    width: 80%;
+  width: 80%;
 }
 
 .slidediv:hover {
-    background-color: white;
-    color: #4db5ff
+  background-color: white;
+  color: #4db5ff;
 }
 
 .bgspan {
@@ -76,11 +91,36 @@
   position: fixed;
   font-weight: 700;
   margin-top: 3%;
-  margin-left: 55%;
+  margin-left: 45%;
   font-size: 150px;
   opacity: 0.2;
   color: white;
   z-index: 2;
+}
+
+.leftdiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.rightdiv {
+  width: 50%;
+}
+
+.expdiv {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 65%;
+  background-color: #9797dd;
+  border-radius: 30px;
+  border: 3px solid white;
+  padding: 20px;
 }
 
 .social {
@@ -163,6 +203,55 @@
 @media screen and (max-width: 960px) {
   .main {
     flex-direction: column;
+    overflow-y: scroll;
+    height: fit-content;
+  }
+
+  .expdiv {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    width: 70%;
+  }
+
+  .bgspan {
+    font-size: 120px;
+    margin-left: 10%;
+    margin-top: -7%;
+  }
+
+  .leftdiv,.rightdiv {
+    width: 100%;
+    margin: 0;
+  }
+
+  .slidediv {
+    width: fit-content;
+    margin-right: 10%;
+  }
+
+  .swiperdiv {
+    width: 90%;
+  }
+
+  .titleexp {
+    font-size: 24px;
+  }
+
+  .contentexp {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+
+  .tagspan {
+    font-size: 12px;
+    margin-right: 2px;
   }
 }
 

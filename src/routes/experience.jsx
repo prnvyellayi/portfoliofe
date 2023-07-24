@@ -12,12 +12,7 @@ import { loadFull } from "tsparticles";
 import Particles from "react-particles";
 import options from "../config/particlejs-config.json";
 import { Link } from "react-router-dom";
-import {
-  EffectCoverflow,
-  Pagination,
-  Navigation,
-  Keyboard,
-} from "swiper/modules";
+import { EffectCards, Pagination, Keyboard } from "swiper/modules";
 
 const Experience = () => {
   const particlesInit = async (main) => {
@@ -28,7 +23,10 @@ const Experience = () => {
   const SocialIconsDiv = () => {
     return (
       <div className={styles.social}>
-        <a target="_blank" href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/">
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+        >
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
         <a target="_blank" href="https://github.com/prnvyellayi">
@@ -45,86 +43,108 @@ const Experience = () => {
   const projects = [
     {
       title: "NirogGyan Brochure",
-      content: 
+      content:
         "Created a static website (company brochure) from scratch using React.js and it's libraries",
+      link: "",
       hash: ["#React.js", "#JavaScript", "#HTML", "#CSS"],
+    },
+    {
+      title: "Store",
+      content:
+        "Created a Store web-app Mobile version to shop any clothing using React.js and it's libraries",
+      link: "https://zag-store-prnvyellayi.netlify.app/",
+      hash: ["#React.js", "#JavaScrpt", "#HTML", "#CSS"],
+    },
+    {
+      title: "Influencer Dashboard",
+      content:
+        "Developed a responisve dashboard web-app with a functioning login to show the influencer data using React.js and it's libraries",
+      link: "https://listed-fans-assignment-prnvyellayi.netlify.app/",
+      hash: ["#React.js", "#JavaScrpt", "#HTML", "#CSS"],
     },
     {
       title: "PDF Parser",
       content:
         "Coded complex logics to Parse health reports to produce Smart Reports, using Node modules",
+      link: "",
       hash: ["#Node.js", "#JavaScript"],
     },
     {
       title: "Minesweeper",
       content:
         "Built a console based Minesweeper game, takes x and y values of a box to be opened",
+      link: "",
       hash: ["#javascript"],
-    },
-    {
-      title: "Store",
-      content:
-        "Created a Store web-app to shop any clothing using React.js and it's libraries",
-      hash: ["#React.js", "#JavaScrpt", "#HTML", "#CSS"],
     }
   ];
 
   return (
     <>
-      <Link className={styles.back} to='/'><BiArrowBack size={35} color="#4db5ff"/></Link>
-      <span className={styles.bgspan}>Work</span>
+      <Link className={styles.back} to="/">
+        <BiArrowBack size={35} color="#4db5ff" />
+      </Link>
+      <span className={styles.bgspan}>WORK</span>
       <SocialIconsDiv />
       <div className={styles.main}>
         <ScrollAnimation
           animateIn="animate__fadeIn"
           delay={1}
-          style={{ width: "100%" }}
+          className={styles.leftdiv}
+        >
+          <div className={styles.expdiv}>
+            <span className={styles.titleexp}>Work Experience</span>
+            <span className={styles.contentexp}>
+              I have worked as a Software Developer intern under 2 companies,
+              both of them being startups.
+              <br />
+              <br /> I integrated numberous APIs and devloped various websites,
+              even from scratch, to help these companies achieve greater
+              heights.
+              <br />
+              <br /> I used numerous node modules and react libraries to achieve
+              seamless data transfer and build beatiful websites.
+            </span>
+          </div>
+        </ScrollAnimation>
+        <ScrollAnimation
+          animateIn="animate__fadeIn"
+          delay={1}
+          className={styles.rightdiv}
         >
           <Swiper
-            effect={"coverflow"}
+            effect={"cards"}
             grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={"auto"}
-            coverflowEffect={{
-              rotate: 10,
-              stretch: 0,
-              depth: 100,
-              modifier: 2.5,
+            // centeredSlides={true}
+            loop={true}
+            cardsEffect={{
+              perSlideRotate: 5,
+              perSlideOffset: 10,
               slideShadows: false,
             }}
             pagination={{ el: ".swiper-pagination", clickable: true }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-              clickable: true,
-            }}
             keyboard={{ enabled: true, onlyInViewport: true }}
-            modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
-            className={`swiper_container ${styles.swiperdiv}`}
+            modules={[EffectCards, Pagination, Keyboard]}
+            className={`mySwiper ${styles.swiperdiv}`}
           >
             {projects.map((each) => {
               return (
-                <SwiperSlide style={{ width: "330px", borderRadius: "30px" }}>
-                  <div className={styles.slidediv}>
-                    <span className={styles.title}>{each.title}</span>
-                    <span className={styles.content}>{each.content}</span>
-                    <hr className={styles.hr} />
-                    <div className={styles.tagdiv}>
-                      {each.hash.map((tag) => {
-                        return <span className={styles.tagspan}>{tag}</span>;
-                      })}
+                <SwiperSlide style={{width: "100%"}}>
+                  <a target="_blank" href={each.link} style={{textDecoration: "none", width: "100%"}}>
+                    <div className={styles.slidediv}>
+                      <span className={styles.title}>{each.title}</span>
+                      <span className={styles.content}>{each.content}</span>
+                      <hr className={styles.hr} />
+                      <div className={styles.tagdiv}>
+                        {each.hash.map((tag) => {
+                          return <span className={styles.tagspan}>{tag}</span>;
+                        })}
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </SwiperSlide>
               );
             })}
             <div className="slide-controller" style={{ paddingTop: "40px" }}>
-              <div className="swiper-button-prev slider-arrow">
-                <ion-icon name="arrow-back-outline"></ion-icon>
-              </div>
-              <div className="swiper-button-next slider-arrow">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </div>
               <div className="swiper-pagination"></div>
             </div>
           </Swiper>
