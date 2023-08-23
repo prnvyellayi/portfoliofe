@@ -45,7 +45,7 @@ const Experience = () => {
       title: "NirogGyan Brochure",
       content:
         "Created a static website (company brochure) from scratch using React.js and it's libraries",
-      link: "",
+      link: "https://www.brochure.niroggyan.com/",
       hash: ["#React.js", "#JavaScript", "#HTML", "#CSS"],
     },
     {

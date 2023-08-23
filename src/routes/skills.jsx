@@ -13,7 +13,9 @@ import {
   BiSolidFileCss,
   BiCodeCurly,
   BiArrowBack,
+  BiLogoTypescript,
 } from "react-icons/bi";
+import {TbBrandNextjs} from 'react-icons/tb'
 
 const Skills = () => {
   const skills = [
@@ -23,9 +25,19 @@ const Skills = () => {
         "Working with JS as my main programming language for the majority of my coding experience",
     },
     {
+      title: "Typescript",
+      content:
+        "Been using typescript to build an error free and readable codebase for my latest projects",
+    },
+    {
       title: "React.js",
       content:
         "Been extensively using React and its libraries to render beautiful websites",
+    },
+    {
+      title: "Next.js",
+      content:
+        "Worked on Next and it's cutting edge tools to build scalable and optimized websites",
     },
     {
       title: "Node.js",
@@ -48,8 +60,14 @@ const Skills = () => {
       case "Javascript":
         return <BiLogoJavascript size={35} />;
         break;
+      case "Typescript":
+        return <BiLogoTypescript size={35} />;
+        break;
       case "React.js":
         return <BiLogoReact size={35} />;
+        break;
+      case "Next.js":
+        return <TbBrandNextjs size={35} />;
         break;
       case "Node.js":
         return <BiLogoNodejs size={35} />;
@@ -136,12 +154,12 @@ const Skills = () => {
             );
           })}
         </div>
-          <Particles
-            id="tsparticles"
-            init={particlesInit}
-            options={options}
-            className={styles.particle}
-          />
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          options={options}
+          className={styles.particle}
+        />
       </div>
     </>
   );
