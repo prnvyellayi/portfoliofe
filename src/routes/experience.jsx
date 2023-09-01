@@ -42,6 +42,13 @@ const Experience = () => {
 
   const projects = [
     {
+      title: "CHAT MATE",
+      content:
+        "Built a chat app using Next.js and Node.js, where users can join rooms to chat with the people in it ",
+      link: "https://prnvyellayi-chatmate.vercel.app/",
+      hash: ["#Next.js", "#Node.js", "#JavaScript", "#HTML", "#CSS"],
+    },
+    {
       title: "NirogGyan Brochure",
       content:
         "Created a static website (company brochure) from scratch using React.js and it's libraries",
