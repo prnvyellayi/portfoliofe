@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "../css/chatgpt.module.css";
 import { AiOutlineSend } from "react-icons/ai";
-import profilepic from "../images/profile.jpeg";
+import profilepic from "../images/profile.jpg";
 import robot from "../images/robot_icon.png";
 import chatbg from "../images/chatbg.jpg";
 import ScrollAnimation from "react-animate-on-scroll";

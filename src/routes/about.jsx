@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import styles from "../css/about.module.css";
-import profilepic from "../images/profile.jpeg";
+import profilepic from "../images/profile.jpg";
 import { loadFull } from "tsparticles";
 import Particles from "react-particles";
 import options from "../config/home-config.json";

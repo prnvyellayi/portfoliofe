@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../css/hello.module.css";
-import profilepic from "../images/profile.jpeg";
+import profilepic from "../images/profile.jpg";
 import { Link as Linkrouter } from "react-router-dom";
 import pdfBase64 from "../util";
 import { Button } from "@react-email/button";
