@@ -1,21 +1,21 @@
 import React, { useRef } from "react";
-import styles from "../css/skills.module.css";
 import ScrollAnimation from "react-animate-on-scroll";
-import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
-import options from "../config/gpt-config.json";
-import { loadFull } from "tsparticles";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import {
+  BiArrowBack,
+  BiCodeCurly,
+  BiLogoJavascript,
+  BiLogoNodejs,
+  BiLogoReact,
+  BiLogoTypescript,
+  BiSolidFileCss,
+} from "react-icons/bi";
+import { TbBrandNextjs } from "react-icons/tb";
 import Particles from "react-particles";
 import { Link } from "react-router-dom";
-import {
-  BiLogoReact,
-  BiLogoNodejs,
-  BiLogoJavascript,
-  BiSolidFileCss,
-  BiCodeCurly,
-  BiArrowBack,
-  BiLogoTypescript,
-} from "react-icons/bi";
-import {TbBrandNextjs} from 'react-icons/tb'
+import { loadFull } from "tsparticles";
+import options from "../config/gpt-config.json";
+import styles from "../css/skills.module.css";
 
 const Skills = () => {
   const skills = [
@@ -59,25 +59,18 @@ const Skills = () => {
     switch (title) {
       case "Javascript":
         return <BiLogoJavascript size={35} />;
-        break;
       case "Typescript":
         return <BiLogoTypescript size={35} />;
-        break;
       case "React.js":
         return <BiLogoReact size={35} />;
-        break;
       case "Next.js":
         return <TbBrandNextjs size={35} />;
-        break;
       case "Node.js":
         return <BiLogoNodejs size={35} />;
-        break;
       case "HTML/CSS":
         return <BiSolidFileCss size={35} />;
-        break;
       case "C language":
         return <BiCodeCurly size={35} />;
-        break;
       default:
         break;
     }
@@ -93,13 +86,22 @@ const Skills = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+          rel="noreferrer"
         >
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
-        <a target="_blank" href="https://github.com/prnvyellayi">
+        <a
+          target="_blank"
+          href="https://github.com/prnvyellayi"
+          rel="noreferrer"
+        >
           <AiFillGithub color="#4db5ff" className={styles.icon2} />
         </a>
-        <a target="_blank" href="https://www.instagram.com/_.psy_fi._/">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/_.psy_fi._/"
+          rel="noreferrer"
+        >
           <AiFillInstagram color="#4db5ff" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
@@ -114,7 +116,7 @@ const Skills = () => {
     var containerScrollPosition =
       document.getElementById("container").scrollLeft;
     if (container) {
-      if (e.deltaY == 0) return;
+      if (e.deltaY === 0) return;
       container.scrollTo({
         left: containerScrollPosition + e.deltaY,
         behaviour: "smooth",

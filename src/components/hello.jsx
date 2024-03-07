@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Button } from "@react-email/button";
 import "animate.css";
 import React from "react";
@@ -30,7 +31,11 @@ const Hello = () => {
         <Button href="mailto:prnvshanmukh00@gmail.com">
           <CiMail size={30} fill="white" className={styles.footericons} />
         </Button>
-        <a target="_blank" href="https://github.com/prnvyellayi">
+        <a
+          target="_blank"
+          href="https://github.com/prnvyellayi"
+          rel="noreferrer"
+        >
           <PiGithubLogoLight
             size={30}
             fill="white"
@@ -40,6 +45,7 @@ const Hello = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+          rel="noreferrer"
         >
           <RiLinkedinLine
             size={30}
@@ -47,7 +53,11 @@ const Hello = () => {
             className={styles.footericons}
           />
         </a>
-        <a target="_blank" href="https://www.instagram.com/_.psy_fi._/">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/_.psy_fi._/"
+          rel="noreferrer"
+        >
           <BiLogoInstagram
             size={30}
             fill="white"
@@ -71,13 +81,22 @@ const Hello = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+          rel="noreferrer"
         >
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
-        <a target="_blank" href="https://github.com/prnvyellayi">
+        <a
+          target="_blank"
+          href="https://github.com/prnvyellayi"
+          rel="noreferrer"
+        >
           <AiFillGithub color="#4db5ff" className={styles.icon2} />
         </a>
-        <a target="_blank" href="https://www.instagram.com/_.psy_fi._/">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/_.psy_fi._/"
+          rel="noreferrer"
+        >
           <AiFillInstagram color="#4db5ff" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
@@ -90,7 +109,10 @@ const Hello = () => {
       <div className={styles.main}>
         <div className={styles.anidiv}>
           <div className={styles.exp}>
-            <Linkrouter to="/experience" className={`${styles.expspan}  ${styles.underline}`}>
+            <Linkrouter
+              to="/experience"
+              className={`${styles.expspan}  ${styles.underline}`}
+            >
               Work
             </Linkrouter>
           </div>
@@ -128,7 +150,10 @@ const Hello = () => {
             </Button>
           </div>
           <div className={styles.skills}>
-            <Linkrouter to="/skills" className={`${styles.skillspan} ${styles.underline}`}>
+            <Linkrouter
+              to="/skills"
+              className={`${styles.skillspan} ${styles.underline}`}
+            >
               Skills
             </Linkrouter>
           </div>

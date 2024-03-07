@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+/* eslint-disable jsx-a11y/alt-text */
+import "animate.css";
 import axios from "axios";
-import styles from "../css/chatgpt.module.css";
+import React, { useEffect, useRef, useState } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import { AiOutlineSend } from "react-icons/ai";
+import styles from "../css/chatgpt.module.css";
+import chatbg from "../images/chatbg.jpg";
 import profilepic from "../images/profile.jpg";
 import robot from "../images/robot_icon.png";
-import chatbg from "../images/chatbg.jpg";
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css";
 
 const ChatGPT = () => {
   const [prompt, setPrompt] = useState("");
@@ -15,7 +16,7 @@ const ChatGPT = () => {
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    if (response != "") {
+    if (response !== "") {
       let resp = { role: "assistant", content: response };
       let copyArr = [...messages];
       copyArr.splice(copyArr.length - 1, 1);
@@ -81,11 +82,36 @@ const ChatGPT = () => {
           <span className={styles.chatbotask}>Ask me anything ❓</span>
           <ul className={styles.chatul}>
             <span style={{ color: "#4db5ff" }}>Try:</span>
-            <span className={styles.chatques}>What's your name?</span>
-            <span className={styles.chatques}>
+            <span
+              className={styles.chatques}
+              onClick={() => {
+                setPrompt(`What's your name?`);
+                const promptElement = document.getElementById("promptElement");
+                promptElement.focus();
+              }}
+            >
+              What's your name?
+            </span>
+            <span
+              className={styles.chatques}
+              onClick={() => {
+                setPrompt(`What's your work experience?`);
+                const promptElement = document.getElementById("promptElement");
+                promptElement.focus();
+              }}
+            >
               What's your work experience?
             </span>
-            <span className={styles.chatques}>What are your skills?</span>
+            <span
+              className={styles.chatques}
+              onClick={() => {
+                setPrompt(`What are your skills?`);
+                const promptElement = document.getElementById("promptElement");
+                promptElement.focus();
+              }}
+            >
+              What are your skills?
+            </span>
           </ul>
         </ScrollAnimation>
         <ScrollAnimation
@@ -106,9 +132,39 @@ const ChatGPT = () => {
                 Ask me my:
               </span>
               <ul className={styles.chatul}>
-                <span className={styles.chatques}>Name?</span>
-                <span className={styles.chatques}>Experience?</span>
-                <span className={styles.chatques}>Skills?</span>
+                <span
+                  className={styles.chatques}
+                  onClick={() => {
+                    setPrompt(`What's your name?`);
+                    const promptElement =
+                      document.getElementById("promptElement");
+                    promptElement.focus();
+                  }}
+                >
+                  Name?
+                </span>
+                <span
+                  className={styles.chatques}
+                  onClick={() => {
+                    setPrompt(`What's your work experience?`);
+                    const promptElement =
+                      document.getElementById("promptElement");
+                    promptElement.focus();
+                  }}
+                >
+                  Experience?
+                </span>
+                <span
+                  className={styles.chatques}
+                  onClick={() => {
+                    setPrompt(`What are your skills?`);
+                    const promptElement =
+                      document.getElementById("promptElement");
+                    promptElement.focus();
+                  }}
+                >
+                  Skills?
+                </span>
               </ul>
             </div>
             {messages.map((msg) => {
@@ -118,6 +174,7 @@ const ChatGPT = () => {
           </div>
           <form className={styles.form} onSubmit={handleSubmit}>
             <input
+              id="promptElement"
               className={styles.input}
               type="text"
               placeholder="Message"

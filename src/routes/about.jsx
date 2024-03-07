@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useCallback } from "react";
+import { BiArrowBack } from "react-icons/bi";
+import Particles from "react-particles";
+import { Link } from "react-router-dom";
+import { loadFull } from "tsparticles";
+import options from "../config/home-config.json";
 import styles from "../css/about.module.css";
 import profilepic from "../images/profile.jpg";
-import { loadFull } from "tsparticles";
-import Particles from "react-particles";
-import options from "../config/home-config.json";
-import { Link } from "react-router-dom";
 
 const About = () => {
   const particlesInit = useCallback(async (main) => {
@@ -13,12 +15,15 @@ const About = () => {
   }, []);
   return (
     <>
+      <Link className={styles.back} to="/">
+        <BiArrowBack size={35} color="#4db5ff" />
+      </Link>
       <span className={styles.bgspan}>ABOUT</span>
       <div className={styles.main}>
         <div className={styles.content}>
           <p className={styles.para}>
-            I'm a Full-Stack MERN developer who is eager to try many new things
-            to upgrade his skills.
+            I'm a Full-Stack MERN developer, eager to try any new thing, which I
+            can get my hands on to upgrade my skills.
           </p>
 
           <p className={styles.para}>
@@ -32,9 +37,11 @@ const About = () => {
           </p>
           <span></span>
         </div>
-        <Link className={styles.imagediv} to="/">
-          <img src={profilepic} className={styles.image}></img>
-        </Link>
+        <div className={styles.imagediv}>
+          <Link to="/">
+            <img src={profilepic} className={styles.image}></img>
+          </Link>
+        </div>
       </div>
       <Particles id="tsparticles" init={particlesInit} options={options} />
     </>

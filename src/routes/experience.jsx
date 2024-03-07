@@ -1,18 +1,18 @@
-import React, { useCallback } from "react";
-import styles from "../css/experience.module.css";
+import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
-import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
+import Particles from "react-particles";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { EffectCards, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { loadFull } from "tsparticles";
-import Particles from "react-particles";
 import options from "../config/particlejs-config.json";
-import { Link } from "react-router-dom";
-import { EffectCards, Pagination, Keyboard } from "swiper/modules";
+import styles from "../css/experience.module.css";
 
 const Experience = () => {
   const particlesInit = async (main) => {
@@ -26,13 +26,22 @@ const Experience = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
+          rel="noreferrer"
         >
           <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
         </a>
-        <a target="_blank" href="https://github.com/prnvyellayi">
+        <a
+          target="_blank"
+          href="https://github.com/prnvyellayi"
+          rel="noreferrer"
+        >
           <AiFillGithub color="#4db5ff" className={styles.icon2} />
         </a>
-        <a target="_blank" href="https://www.instagram.com/_.psy_fi._/">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/_.psy_fi._/"
+          rel="noreferrer"
+        >
           <AiFillInstagram color="#4db5ff" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
@@ -82,11 +91,11 @@ const Experience = () => {
         "Built a console based Minesweeper game, takes x and y values of a box to be opened",
       link: "",
       hash: ["#javascript"],
-    }
+    },
   ];
 
   return (
-    <>
+    <div className={styles.expdivmain}>
       <Link className={styles.back} to="/">
         <BiArrowBack size={35} color="#4db5ff" />
       </Link>
@@ -101,8 +110,8 @@ const Experience = () => {
           <div className={styles.expdiv}>
             <span className={styles.titleexp}>Work Experience</span>
             <span className={styles.contentexp}>
-              I have worked as a Software Developer intern under 2 companies,
-              both of them being startups.
+              I have worked as a Software Developer intern under 3 companies for
+              over 2 years, all of them being startups.
               <br />
               <br /> I integrated numberous APIs and devloped various websites,
               even from scratch, to help these companies achieve greater
@@ -110,6 +119,9 @@ const Experience = () => {
               <br />
               <br /> I used numerous node modules and react libraries to achieve
               seamless data transfer and build beatiful websites.
+              <br />
+              <br /> I have had multiple projects under my full ownership,
+              driving all of them to completion.
             </span>
           </div>
         </ScrollAnimation>
@@ -135,8 +147,13 @@ const Experience = () => {
           >
             {projects.map((each) => {
               return (
-                <SwiperSlide style={{width: "100%"}}>
-                  <a target="_blank" href={each.link} style={{textDecoration: "none", width: "100%"}}>
+                <SwiperSlide style={{ width: "100%" }}>
+                  <a
+                    target="_blank"
+                    href={each.link}
+                    style={{ textDecoration: "none", width: "100%" }}
+                    rel="noreferrer"
+                  >
                     <div className={styles.slidediv}>
                       <span className={styles.title}>{each.title}</span>
                       <span className={styles.content}>{each.content}</span>
@@ -158,7 +175,7 @@ const Experience = () => {
         </ScrollAnimation>
       </div>
       <Particles id="tsparticles" init={particlesInit} options={options} />
-    </>
+    </div>
   );
 };
 

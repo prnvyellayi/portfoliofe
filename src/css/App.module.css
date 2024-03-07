@@ -12,6 +12,7 @@
     #1f1f30 10px
   );
   display: flex;
+  height: 100%;
   font-weight: 600;
   font-family: Poppins;
   flex-direction: column;

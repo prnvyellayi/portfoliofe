@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #1f1f38;
   background: repeating-linear-gradient(
     90deg,
@@ -133,6 +133,7 @@
   justify-content: flex-end;
   /* padding-bottom: 20px; */
   padding-bottom: 10%;
+  z-index: 20;
 }
 
 .icon1 {
@@ -142,6 +143,10 @@
   animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
   height: 26px;
   width: 26px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
 }
 
 .icon2 {
@@ -151,6 +156,10 @@
   animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
   height: 26px;
   width: 26px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
 }
 
 .icon3 {
@@ -160,6 +169,10 @@
   animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
   height: 26px;
   width: 26px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
 }
 
 .linesocial {
@@ -175,7 +188,7 @@
   position: fixed;
   top: 3%;
   left: 2%;
-  z-index: 1;
+  z-index: 30;
 }
 
 @keyframes iconappear {
@@ -219,7 +232,8 @@
     margin-top: -7%;
   }
 
-  .leftdiv,.rightdiv {
+  .leftdiv,
+  .rightdiv {
     width: 100%;
     margin: 0;
   }
