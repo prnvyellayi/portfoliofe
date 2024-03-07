@@ -1,16 +1,16 @@
-import React from "react";
-import styles from "../css/hello.module.css";
-import profilepic from "../images/profile.jpg";
-import { Link as Linkrouter } from "react-router-dom";
-import pdfBase64 from "../util";
 import { Button } from "@react-email/button";
+import "animate.css";
+import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
-import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import { BiLogoInstagram } from "react-icons/bi";
-import { RiLinkedinLine } from "react-icons/ri";
 import { CiMail } from "react-icons/ci";
 import { PiGithubLogoLight } from "react-icons/pi";
-import "animate.css";
+import { RiLinkedinLine } from "react-icons/ri";
+import { Link as Linkrouter } from "react-router-dom";
+import styles from "../css/hello.module.css";
+import profilepic from "../images/profile.jpg";
+import pdfBase64 from "../util";
 
 const Hello = () => {
   const downloadPDF = () => {
@@ -90,7 +90,7 @@ const Hello = () => {
       <div className={styles.main}>
         <div className={styles.anidiv}>
           <div className={styles.exp}>
-            <Linkrouter to="/experience" className={styles.expspan}>
+            <Linkrouter to="/experience" className={`${styles.expspan}  ${styles.underline}`}>
               Work
             </Linkrouter>
           </div>
@@ -122,13 +122,13 @@ const Hello = () => {
             <div className={styles.linesocial}></div>
             <Button
               href="mailto:prnvshanmukh00@gmail.com"
-              className={styles.contactspan}
+              className={`${styles.contactspan} ${styles.underline}`}
             >
               Contact me
             </Button>
           </div>
           <div className={styles.skills}>
-            <Linkrouter to="/skills" className={styles.skillspan}>
+            <Linkrouter to="/skills" className={`${styles.skillspan} ${styles.underline}`}>
               Skills
             </Linkrouter>
           </div>
