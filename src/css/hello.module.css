@@ -318,6 +318,7 @@
 
 @media screen and (max-width: 960px) {
   .main {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -368,6 +369,7 @@
   .footer {
     display: inline-flex;
     justify-content: space-evenly;
+    justify-self: end;
     align-items: center;
     position: relative;
     width: 100%;

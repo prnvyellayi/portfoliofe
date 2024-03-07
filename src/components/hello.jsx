@@ -105,75 +105,73 @@ const Hello = () => {
   };
 
   return (
-    <>
-      <div className={styles.main}>
-        <div className={styles.anidiv}>
-          <div className={styles.exp}>
-            <Linkrouter
-              to="/experience"
-              className={`${styles.expspan}  ${styles.underline}`}
-            >
-              Work
-            </Linkrouter>
-          </div>
-          <SocialIconsDiv />
-        </div>
-        <ScrollAnimation
-          className={styles.hellodiv}
-          animateIn="animate__fadeIn"
-          animateOnce={true}
-        >
-          <span className={styles.hey}>Hey there! I'm,</span>
-          <span className={styles.name}>Pranav Yellayi</span>
-          <span className={styles.dev}>Full Stack Software Developer</span>
-          <div className={styles.buttondiv}>
-            <button onClick={downloadPDF} className={styles.button}>
-              My Resume
-            </button>
-            <button onClick={handlescroll} className={styles.button}>
-              Talk to Me!
-            </button>
-          </div>
-          <Linkrouter to="/about">
-            <img src={profilepic} className={styles.image}></img>
-          </Linkrouter>
-          <span style={{ color: "#4db5ff" }}>About Me!</span>
-        </ScrollAnimation>
-        <div className={styles.anidiv}>
-          <div className={styles.contact}>
-            <div className={styles.linesocial}></div>
-            <Button
-              href="mailto:prnvshanmukh00@gmail.com"
-              className={`${styles.contactspan} ${styles.underline}`}
-            >
-              Contact me
-            </Button>
-          </div>
-          <div className={styles.skills}>
-            <Linkrouter
-              to="/skills"
-              className={`${styles.skillspan} ${styles.underline}`}
-            >
-              Skills
-            </Linkrouter>
-          </div>
-        </div>
-        <ScrollAnimation
-          className={styles.anidiv2}
-          animateOnce={true}
-          animateIn="animate__bounceInUp"
-          duration={1.5}
-        >
-          <Linkrouter to="/experience" className={styles.smallspan}>
+    <div className={styles.main}>
+      <div className={styles.anidiv}>
+        <div className={styles.exp}>
+          <Linkrouter
+            to="/experience"
+            className={`${styles.expspan}  ${styles.underline}`}
+          >
             Work
           </Linkrouter>
-          <Linkrouter to="/skills" className={styles.smallspan}>
+        </div>
+        <SocialIconsDiv />
+      </div>
+      <ScrollAnimation
+        className={styles.hellodiv}
+        animateIn="animate__fadeIn"
+        animateOnce={true}
+      >
+        <span className={styles.hey}>Hey there! I'm,</span>
+        <span className={styles.name}>Pranav Yellayi</span>
+        <span className={styles.dev}>Full Stack Software Developer</span>
+        <div className={styles.buttondiv}>
+          <button onClick={downloadPDF} className={styles.button}>
+            My Resume
+          </button>
+          <button onClick={handlescroll} className={styles.button}>
+            Talk to Me!
+          </button>
+        </div>
+        <Linkrouter to="/about">
+          <img src={profilepic} className={styles.image}></img>
+        </Linkrouter>
+        <span style={{ color: "#4db5ff" }}>About Me!</span>
+      </ScrollAnimation>
+      <div className={styles.anidiv}>
+        <div className={styles.contact}>
+          <div className={styles.linesocial}></div>
+          <Button
+            href="mailto:prnvshanmukh00@gmail.com"
+            className={`${styles.contactspan} ${styles.underline}`}
+          >
+            Contact me
+          </Button>
+        </div>
+        <div className={styles.skills}>
+          <Linkrouter
+            to="/skills"
+            className={`${styles.skillspan} ${styles.underline}`}
+          >
             Skills
           </Linkrouter>
-        </ScrollAnimation>
-        <Footer />
+        </div>
       </div>
-    </>
+      <ScrollAnimation
+        className={styles.anidiv2}
+        animateOnce={true}
+        animateIn="animate__bounceInUp"
+        duration={1.5}
+      >
+        <Linkrouter to="/experience" className={styles.smallspan}>
+          Work
+        </Linkrouter>
+        <Linkrouter to="/skills" className={styles.smallspan}>
+          Skills
+        </Linkrouter>
+      </ScrollAnimation>
+      <Footer />
+    </div>
   );
 };
 
