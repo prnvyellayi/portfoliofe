@@ -69,10 +69,7 @@ const Hello = () => {
   };
 
   const handlescroll = () => {
-    window.scroll({
-      top: 723,
-      behavior: "smooth",
-    });
+    window.scrollTo(0, document.body.scrollHeight);
   };
 
   const SocialIconsDiv = () => {
