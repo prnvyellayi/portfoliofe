@@ -37,14 +37,14 @@ export default function Index() {
   // const playAudio = () => {
   //   const audiEle = document.getElementById("intro_song");
   //   audiEle.play();
-  // };
+
 
   const handleScroll = async () => {
     // pauseAudio();
     const myLoop = () => {
       if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
         setCardDiv();
-      
+
       cameraRef.current.fov += 0.1958;
       orbitRef.current.target.y -= 0.0048;
       cameraRef.current.updateProjectionMatrix();
@@ -52,10 +52,10 @@ export default function Index() {
       points.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
 
       setTimeout(() => {
-        if(meshRef.current.rotation.y < 6.6) {
+        if (meshRef.current.rotation.y < 6.6) {
           myLoop();
         }
-      },10);
+      }, 10);
     };
 
     await myLoop();
@@ -161,8 +161,20 @@ export default function Index() {
     return true;
   };
 
+  let lastY = null;
+
+  const touchScroll = (event) => {
+    if(lastY && event.touches[0].screenY < lastY) {
+      scrollFunction({deltaY : 1})
+    } else if (lastY && event.touches[0].screenY > lastY) {
+      scrollFunction({deltaY : -1})
+    }
+    lastY = event.touches[0].screenY
+    console.log(meshRef.current.rotation.y);
+  } 
+
   const scrollFunction = (event) => {
-    console.log(scrollValue);
+    console.log(event);
     if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
       setCardDiv();
 
@@ -221,7 +233,7 @@ export default function Index() {
     window.scrollTo(0, 0);
     // pauseAudio();
 
-    const canvas = document.getElementById("character-canvas");
+    // const canvas = document.getElementById("character-canvas");
 
     // canvas.addEventListener("mousemove", mouseMove);
     // canvas.addEventListener("click", () => {
@@ -250,8 +262,12 @@ export default function Index() {
         left: 0,
         zIndex: 10,
         display: "fixed",
+        overflowX: "hidden",
       }}
       onWheel={scrollFunction}
+      onTouchStart={(e) => lastY = e.touches[0].clientY}
+      onTouchMove={touchScroll}
+      onTouchEnd={(e) => lastY = null}
     >
       {/* <audio
         id="intro_song"
