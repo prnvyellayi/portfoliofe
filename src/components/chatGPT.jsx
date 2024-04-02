@@ -15,7 +15,19 @@ const ChatGPT = () => {
   const [messages, setMessages] = useState([]);
   const bottomRef = useRef(null);
 
+  const startServer = async () => {
+    await axios
+      .get("https://portfolio-be-jnai.onrender.com/start")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   useEffect(() => {
+    startServer();
     if (response !== "") {
       let resp = { role: "assistant", content: response };
       let copyArr = [...messages];
@@ -81,7 +93,7 @@ const ChatGPT = () => {
           </span>
           <span className={styles.chatbotask}>Ask me anything ❓</span>
           <ul className={styles.chatul}>
-            <span style={{ color: "#4db5ff" }}>Try:</span>
+            <span style={{ color: "#8EFF35" }}>Try:</span>
             <span
               className={styles.chatques}
               onClick={() => {
@@ -128,7 +140,7 @@ const ChatGPT = () => {
                 <img src={robot} style={{ width: "33px", height: "33px" }} />
               </span>
               <span className={styles.chatbotask}>Ask me anything ❓</span>
-              <span style={{ color: "#4db5ff", fontWeight: "700" }}>
+              <span style={{ color: "black", fontWeight: "700" }}>
                 Ask me my:
               </span>
               <ul className={styles.chatul}>

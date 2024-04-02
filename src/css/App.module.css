@@ -3,13 +3,13 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 .App {
   text-align: center;
-  background-color: #1f1f38;
+  background-color: #000000;
   background: repeating-linear-gradient(
     90deg,
-    #1f1f38,
-    #1f1f38 5px,
-    #1f1f30 5px,
-    #1f1f30 10px
+    #000000,
+    #000000 5px,
+    #1B1212 5px,
+    #1B1212 10px
   );
   display: flex;
   height: 100%;
@@ -20,15 +20,16 @@
   align-items: center;
   width: 100vw;
   overflow-x: hidden;
+  z-index: 20;
 }
 
 .body {
-  background-color: #1f1f38;
+  background-color: #000000;
   background: repeating-linear-gradient(
     90deg,
-    #1f1f38,
-    #1f1f38 5px,
-    #1f1f30 5px,
-    #1f1f30 10px
+    #000000,
+    #000000 5px,
+    #1B1212 5px,
+    #1B1212 10px
   );
 }

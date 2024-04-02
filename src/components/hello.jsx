@@ -80,21 +80,21 @@ const Hello = () => {
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
           rel="noreferrer"
         >
-          <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
+          <AiFillLinkedin color="#8EFF35" className={styles.icon1} />
         </a>
         <a
           target="_blank"
           href="https://github.com/prnvyellayi"
           rel="noreferrer"
         >
-          <AiFillGithub color="#4db5ff" className={styles.icon2} />
+          <AiFillGithub color="#8EFF35" className={styles.icon2} />
         </a>
         <a
           target="_blank"
           href="https://www.instagram.com/_.psy_fi._/"
           rel="noreferrer"
         >
-          <AiFillInstagram color="#4db5ff" className={styles.icon3} />
+          <AiFillInstagram color="#8EFF35" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
       </div>
@@ -133,7 +133,7 @@ const Hello = () => {
         <Linkrouter to="/about">
           <img src={profilepic} className={styles.image}></img>
         </Linkrouter>
-        <span style={{ color: "#4db5ff" }}>About Me!</span>
+        <span style={{ color: "#8EFF35" }}>About Me!</span>
       </ScrollAnimation>
       <div className={styles.anidiv}>
         <div className={styles.contact}>

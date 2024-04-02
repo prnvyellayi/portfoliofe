@@ -1,0 +1,148 @@
+.scrollDown {
+  animation: bounce 1s infinite;
+  color: white;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-items: centre;
+  justify-content: centre;
+  gap: 8px;
+}
+
+.audioPlayer {
+  padding: 2px 4px;
+  position: fixed;
+  color: white;
+  border-radius: 14px;
+  background: rgb(142, 255, 53, 0.6);
+  z-index: 20;
+}
+
+.points {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 50%;
+}
+
+.bgspan {
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  font-weight: 900;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 150px;
+  opacity: 0.6;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 2rem;
+  text-decoration-thickness: 3px;
+  width: 100%;
+}
+
+.cardDiv {
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  color: rgb(142, 255, 53);
+  font-weight: 700;
+  width: 22%;
+  text-align: left;
+  gap: 4px;
+  z-index: 80;
+  animation: hoverAnimationReverse 0.5s 1;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    animation: hoverAnimation 0.5s 1;
+  }
+}
+
+.cardHead {
+  font-size: 36px;
+  line-height: 2rem;
+}
+
+.cardBody {
+  font-size: 18px;
+  font-weight: 400;
+  color: #d3d3d3;
+}
+
+@media screen and (max-width: 960px) {
+  .bgspan {
+    font-size: 42px;
+    top: 5%;
+    text-underline-offset: 1rem;
+  }
+
+  .cardHead {
+    font-size: 24px;
+    line-height: 1.2rem;
+  }
+
+  .cardBody {
+    font-size: 16px;
+    line-height: 1.2rem;
+  }
+
+  .cardDiv {
+    width: 40%;
+  }
+
+  .audioPlayer {
+    display: none;
+  }
+
+  .cardDiv {
+    border: 0.1px solid rgb(142, 255, 53);
+    border-radius: 16px;
+    background-color: rgba(142, 255, 53, 0.1);
+  }
+}
+
+@keyframes hoverAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes hoverAnimationReverse {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

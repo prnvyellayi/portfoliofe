@@ -1,29 +1,93 @@
 .main {
   display: inline-flex;
   align-items: center;
-  background-color: #1f1f38;
+  background-color: #000000;
   background: repeating-linear-gradient(
     90deg,
-    #1f1f38,
-    #1f1f38 5px,
-    #1f1f30 5px,
-    #1f1f30 10px
+    #000000,
+    #000000 5px,
+    #1B1212 5px,
+    #1B1212 10px
   );
+  color: #8eff35;
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  padding-left: 20px;
+  z-index: 20;
+  animation-name: text-animation;
+  animation-duration: 2.75s;
+}
+
+.icon1 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 50px;
+  width: 50px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.icon2 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1.1s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 50px;
+  width: 50px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.icon3 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 50px;
+  width: 50px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.icon4 {
+  /* margin-bottom: 10px; */
+  animation-name: iconappear;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.2, 1.5);
+  height: 50px;
+  width: 50px;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
 .bgspan {
   font-family: poppins;
   position: fixed;
   font-weight: 700;
-  top: -3%;
-  left: 35%;
+  top: 4%;
+  right: 10%;
   font-size: 150px;
-  opacity: 0.2;
-  color: white;
+  color: rgb(142, 255, 53, 0.3);
 }
 
 .content {
@@ -33,19 +97,36 @@
   width: 40%;
   margin: 30px;
   margin-left: 60px;
-  height: 70%;
-  border: 3px solid white;
+  border: 3px solid rgb(142, 255, 53, 1);
   animation-duration: 2.5s;
   animation-name: content-animation;
-  background-color: #9797dd;
+  background-color: rgb(142, 255, 53, 0.2);
   animation-timing-function: cubic-bezier(1, 0, 0.5, 1);
 }
 
 .imagediv {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 50%;
+}
+
+.button {
+  border-radius: 8px;
+  padding: 10px;
+  background-color:  rgb(142, 255, 53, 1);
+  border: 1px solid #8eff35;
+  margin-top: 20px;
+  color: black;
+  font-weight: 600;
+  width: 40%;
+  font-size: 14px;
+  margin: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  animation-name: text-animation;
+  animation-duration: 2.75s;
 }
 
 .image {
@@ -54,8 +135,9 @@
   animation-name: image-travel;
   animation-duration: 1s;
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 3px skyblue;
+  box-shadow: 0px 0px 4px 3px rgb(142, 255, 53, 1);
   animation-timing-function: cubic-bezier(1, 0, 0.5, 1);
+  margin-bottom: 60px;
 }
 
 .para {
@@ -66,6 +148,7 @@
   font-style: italic;
   animation-name: text-animation;
   animation-duration: 2.75s;
+  padding: 0px;
 }
 
 .back {
@@ -117,14 +200,14 @@
   }
   72% {
     transform: scaleY(1.1);
-    border-top: 4px solid white;
-    border-bottom: 4px solid white;
+    border-top: 4px solid rgb(142, 255, 53, 1);
+    border-bottom: 4px solid rgb(142, 255, 53, 1);
     background: none;
   }
   100% {
     transform: scaleY(1);
-    border-top: 4px solid white;
-    border-bottom: 4px solid white;
+    border-top: 4px solid rgb(142, 255, 53, 1);
+    border-bottom: 4px solid rgb(142, 255, 53, 1);
   }
 }
 
@@ -138,13 +221,13 @@
   .bgspan {
     font-size: 120px;
     left: 5%;
-    top: -5%;
+    top: -3%;
   }
 
   .content {
     width: 90%;
     height: 90%;
-    margin: 40px 0px;
+    margin: 60px 0px;
     padding: 0px;
     justify-content: space-evenly;
   }
@@ -160,6 +243,34 @@
     width: 280px;
     margin-bottom: 20px;
     animation-duration: 2.5s;
+  }
+
+  .social {
+    padding: 0px 10px;
+  }
+
+  .icon1 {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon2 {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon3 {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon4 {
+    width: 36px;
+    height: 36px;
+  }
+
+  .button {
+    width: 50%
   }
 
   @keyframes image-travel {
@@ -207,8 +318,8 @@
     }
     100% {
       transform: scale(1, 1);
-      border-top: 4px solid white;
-      border-bottom: 4px solid white;
+      border-top: 4px solid rgb(142, 255, 53, 1);
+      border-bottom: 4px solid rgb(142, 255, 53, 1);
     }
   }
 }

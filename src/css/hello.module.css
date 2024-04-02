@@ -43,10 +43,10 @@
 .button {
   border-radius: 8px;
   padding: 10px;
-  background-color: #4db5ff;
-  border: 1px solid #4db5ff;
+  background-color: #8eff35;
+  border: 1px solid #8eff35;
   margin-top: 20px;
-  color: white;
+  color: black;
   width: 160px;
   font-size: 14px;
   margin: 10px;
@@ -62,7 +62,7 @@
     #1f1f30 5px,
     #1f1f30 10px
   );
-  color: #4db5ff;
+  color: #8eff35;
 }
 
 .main {
@@ -167,7 +167,7 @@
 }
 
 .linesocial {
-  border-left: 1px solid #4db5ff;
+  border-left: 1px solid #8eff35;
   width: 1px;
   height: 140px;
   animation-name: lineappear;
@@ -177,7 +177,7 @@
 
 .contactspan {
   rotate: 90deg;
-  color: #4db5ff;
+  color: #8eff35;
   font-weight: 600;
   font-size: 18px;
   width: 120px;
@@ -190,7 +190,7 @@
 .expspan {
   text-decoration: none;
   rotate: -90deg;
-  color: #4db5ff;
+  color: #8eff35;
   font-weight: 600;
   font-size: 20px;
   width: 120px;
@@ -203,7 +203,7 @@
 .skillspan {
   text-decoration: none;
   rotate: 90deg;
-  color: #4db5ff;
+  color: #8eff35;
   font-weight: 600;
   font-size: 20px;
   width: 120px;
@@ -306,13 +306,13 @@
 
 @keyframes pulseBorder {
   0% {
-    box-shadow: 0px 0px 6px 6px rgb(135, 206, 235, 1);
+    box-shadow: 0px 0px 6px 6px rgb(142, 255, 53, 1);
   }
   50% {
-    box-shadow: 0px 0px 6px 6px rgb(135, 206, 235, 0.3);
+    box-shadow: 0px 0px 6px 6px rgb(142, 255, 53, 0.3);
   }
   100% {
-    box-shadow: 0px 0px 6px 6px rgb(135, 206, 235, 1);
+    box-shadow: 0px 0px 6px 6px rgb(142, 255, 53, 1);
   }
 }
 
@@ -347,18 +347,18 @@
     display: flex;
     padding: 10px;
     width: 130px;
-    background-color: #4db5ff;
+    background-color: #8eff35;
     color: white;
     border-radius: 10px;
     font-size: 14px;
     justify-content: center;
     align-items: center;
-    border: 1px solid #4db5ff;
+    border: 1px solid #8eff35;
   }
 
   .smallspan:hover {
     background-color: transparent;
-    color: #4db5ff;
+    color: #8eff35;
   }
 
   .image {
@@ -388,7 +388,7 @@
   }
 
   .footericons:hover {
-    background-color: #4db5ff;
+    background-color: #8eff35;
   }
 
   @keyframes footer-animation {

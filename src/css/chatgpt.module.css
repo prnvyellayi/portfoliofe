@@ -17,7 +17,7 @@
   /* box-shadow: 4px 4px 15px 4px; */
   padding: 10px;
   margin: 20px;
-  color: #4db5ff;
+  color: #8eff35;
   font-weight: 400;
 }
 
@@ -71,9 +71,9 @@
   width: 40px;
   padding-top: 5px;
   padding-left: 7px;
-  background-color: #4db5ff;
-  /* border: 2px sold #4db5ff; */
-  color: white;
+  background-color: #8eff35;
+  /* border: 2px sold #8EFF35; */
+  color: black;
 }
 
 .button:hover {
@@ -85,7 +85,7 @@
     #1f1f30 5px,
     #1f1f30 10px
   );
-  color: #4db5ff;
+  color: #8eff35;
 }
 
 .outerdiv {
@@ -96,14 +96,13 @@
   font-family: Poppins;
   justify-content: flex-start;
   align-items: center;
-  background-color: #1f1f38;
+  background-color: #000000;
   background: repeating-linear-gradient(
     90deg,
-    #1f1f38,
-    #1f1f38 5px,
-    #1f1f30 5px,
-    #1f1f30 10px
-
+    #000000,
+    #000000 5px,
+    #1B1212 5px,
+    #1B1212 10px
   );
 }
 
@@ -131,16 +130,17 @@
   padding-top: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: #4db5ff;
-  border: 1px solid #4db5ff;
+  background-color: #8eff35;
+  border: 1px solid #8eff35;
   border-radius: 24px;
   height: 35px;
   width: 70%;
+  color: black;
 }
 
 .chatques:hover {
-  background-color: #2c2c50;
-  color: #4db5ff;
+  background-color: #000000;
+  color: #8eff35;
 }
 
 .chatul {
@@ -160,8 +160,8 @@
   height: fit-content;
   text-align: left;
   max-width: 260px;
-  background-color: #4db5ff;
-  color: white;
+  background-color: #8eff35;
+  color: black;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
@@ -178,14 +178,14 @@
   height: fit-content;
   text-align: left;
   max-width: 320px;
-  background-color: #2c2c50;
+  background-color: black;
   font-weight: 600;
   font-family: montserrat;
-  color: #4db5ff;
+  color: #8eff35;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  border: 1px solid #4db5ff;
+  border: 1px solid #8eff35;
   font-size: 15px;
 }
 
@@ -209,7 +209,7 @@
   background: #555;
 }
 
-@media screen and (max-width : 960px) {
+@media screen and (max-width: 960px) {
   .outerdiv {
     flex-direction: column;
     justify-content: center;
@@ -242,9 +242,9 @@
 
   .chatques {
     display: flex;
-    background-color: #555;
-    border: 1px solid #555;
-    color: white;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
     text-align: center;
     padding-right: 15px;
     margin: 0;
@@ -254,7 +254,8 @@
   }
 
   .chatques:hover {
-    background-color: white;
+    background-color: black;
+    border: 1px solid #8eff35;
   }
 
   .innerdiv {

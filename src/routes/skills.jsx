@@ -20,21 +20,6 @@ import styles from "../css/skills.module.css";
 const Skills = () => {
   const skills = [
     {
-      title: "Javascript",
-      content:
-        "Working with JS as my main programming language for the majority of my coding experience",
-    },
-    {
-      title: "Typescript",
-      content:
-        "Been using typescript to build an error free and readable codebase for my latest projects",
-    },
-    {
-      title: "React.js",
-      content:
-        "Been extensively using React and its libraries to render beautiful websites",
-    },
-    {
       title: "Next.js",
       content:
         "Worked on Next and it's cutting edge tools to build scalable and optimized websites",
@@ -43,6 +28,21 @@ const Skills = () => {
       title: "Node.js",
       content:
         "Building runtime environment for server-side JavaScript development using Node and express.js",
+    },
+    {
+      title: "React.js",
+      content:
+        "Been extensively using React and its libraries to render beautiful websites",
+    },
+    {
+      title: "Javascript",
+      content:
+        "Working with JS as my main programming language for the majority of my coding experience",
+    },
+    {
+      title: "Typescript",
+      content:
+        "Been using typescript to build an error free and readable codebase for my latest projects",
     },
     {
       title: "HTML/CSS",
@@ -88,21 +88,21 @@ const Skills = () => {
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
           rel="noreferrer"
         >
-          <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
+          <AiFillLinkedin color="#8EFF35" className={styles.icon1} />
         </a>
         <a
           target="_blank"
           href="https://github.com/prnvyellayi"
           rel="noreferrer"
         >
-          <AiFillGithub color="#4db5ff" className={styles.icon2} />
+          <AiFillGithub color="#8EFF35" className={styles.icon2} />
         </a>
         <a
           target="_blank"
           href="https://www.instagram.com/_.psy_fi._/"
           rel="noreferrer"
         >
-          <AiFillInstagram color="#4db5ff" className={styles.icon3} />
+          <AiFillInstagram color="#8EFF35" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
       </div>
@@ -128,7 +128,7 @@ const Skills = () => {
     <>
       <div className={styles.main}>
         <Link className={styles.back} to="/">
-          <BiArrowBack size={35} color="#4db5ff" />
+          <BiArrowBack size={35} color="#8EFF35" />
         </Link>
         <span className={styles.bgspan}>SKILLS</span>
         <SocialIconsDiv />

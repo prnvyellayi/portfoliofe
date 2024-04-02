@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
@@ -20,6 +20,10 @@ const Experience = () => {
     await loadFull(main);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = 'scroll'
+  })
+
   const SocialIconsDiv = () => {
     return (
       <div className={styles.social}>
@@ -28,21 +32,21 @@ const Experience = () => {
           href="https://www.linkedin.com/in/pranav-shanmukh-yellayi-495145198/"
           rel="noreferrer"
         >
-          <AiFillLinkedin color="#4db5ff" className={styles.icon1} />
+          <AiFillLinkedin color="#8EFF35" className={styles.icon1} />
         </a>
         <a
           target="_blank"
           href="https://github.com/prnvyellayi"
           rel="noreferrer"
         >
-          <AiFillGithub color="#4db5ff" className={styles.icon2} />
+          <AiFillGithub color="#8EFF35" className={styles.icon2} />
         </a>
         <a
           target="_blank"
           href="https://www.instagram.com/_.psy_fi._/"
           rel="noreferrer"
         >
-          <AiFillInstagram color="#4db5ff" className={styles.icon3} />
+          <AiFillInstagram color="#8EFF35" className={styles.icon3} />
         </a>
         <div className={styles.linesocial}></div>
       </div>
@@ -97,7 +101,7 @@ const Experience = () => {
   return (
     <div className={styles.expdivmain}>
       <Link className={styles.back} to="/">
-        <BiArrowBack size={35} color="#4db5ff" />
+        <BiArrowBack size={35} color="#8EFF35" />
       </Link>
       <span className={styles.bgspan}>WORK</span>
       <SocialIconsDiv />
@@ -139,6 +143,12 @@ const Experience = () => {
               perSlideRotate: 5,
               perSlideOffset: 10,
               slideShadows: false,
+            }}
+            style={{
+              "--swiper-pagination-color": "rgba(142, 255, 53, 1)",
+              "--swiper-pagination-bullet-inactive-color": 'rgba(142, 255, 53, 0.3)',
+              "--swiper-pagination-bullet-inactive-opacity": "1",
+              "--swiper-pagination-bullet-horizontal-gap": "6px"
             }}
             pagination={{ el: ".swiper-pagination", clickable: true }}
             keyboard={{ enabled: true, onlyInViewport: true }}
