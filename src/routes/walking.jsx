@@ -15,6 +15,7 @@ import styles from "../css/cube.module.css";
 import fragmentShader from "!!raw-loader!./fragmentShader.glsl";
 import vertexShader from "!!raw-loader!./vertexShader.glsl";
 import { useNavigate } from "react-router-dom";
+import { Finger } from "react-finger";
 
 export default function Index() {
   const meshRef = useRef(null);
@@ -22,6 +23,8 @@ export default function Index() {
   const orbitRef = useRef(null);
   const points = useRef();
   const navigate = useNavigate();
+
+  const FingeredDiv = Finger("div");
 
   const [cardStyle, setCardStyle] = useState({
     display: "none",
@@ -37,7 +40,6 @@ export default function Index() {
   // const playAudio = () => {
   //   const audiEle = document.getElementById("intro_song");
   //   audiEle.play();
-
 
   const handleScroll = async () => {
     // pauseAudio();
@@ -164,22 +166,65 @@ export default function Index() {
   let lastY = null;
 
   const touchScroll = (event) => {
-    if(lastY && event.touches[0].screenY < lastY) {
-      scrollFunction({deltaY : 1})
+    if (lastY && event.touches[0].screenY < lastY) {
+      if (meshRef.current.rotation.y >= 6.6) {
+        document.body.style.overflow = "scroll";
+        return;
+      }
+
+      document.body.style.overflow = "hidden";
+      let i = 0;
+      const myLoop = () => {
+        if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
+          setCardDiv();
+
+        cameraRef.current.fov += 0.1958;
+        orbitRef.current.target.y -= 0.0048;
+        cameraRef.current.updateProjectionMatrix();
+        meshRef.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
+        points.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
+        i++;
+        setScrollValue(scrollValue + 1);
+
+        setTimeout(() => {
+          if (i < 10) {
+            myLoop();
+          }
+        }, 10);
+      };
+      myLoop();
     } else if (lastY && event.touches[0].screenY > lastY) {
-      scrollFunction({deltaY : -1})
+      let i = 10;
+      const myLoop = () => {
+        if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
+          setCardDiv();
+
+        cameraRef.current.fov -= 0.1958;
+        orbitRef.current.target.y += 0.0048;
+        cameraRef.current.updateProjectionMatrix();
+        meshRef.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
+        points.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
+        i--;
+        setScrollValue(scrollValue - 1);
+
+        setTimeout(() => {
+          if (i > 0) {
+            myLoop();
+          }
+        }, 10);
+      };
+      myLoop();
     }
-    lastY = event.touches[0].screenY
-    console.log(meshRef.current.rotation.y);
-  } 
+    lastY = event.touches[0].screenY;
+  };
 
   const scrollFunction = (event) => {
-    console.log(event);
+    const movementY = event.hasOwnProperty('deltaY') ? event.deltaY : -event.movementY;
     if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
       setCardDiv();
 
     if (
-      event.deltaY < 0 &&
+      movementY < 0 &&
       meshRef.current.rotation.y >= 6.6 &&
       document.getElementById("character-canvas").getBoundingClientRect()
         .top === 0
@@ -203,14 +248,14 @@ export default function Index() {
       return;
     }
 
-    if (event.deltaY >= 0) {
+    if (movementY >= 0) {
       setScrollValue(scrollValue + 1);
       cameraRef.current.fov += 0.1958;
       orbitRef.current.target.y -= 0.0048;
       cameraRef.current.updateProjectionMatrix();
       meshRef.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
       points.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
-    } else if (event.deltaY < 0 && scrollValue > 0) {
+    } else if (movementY < 0 && scrollValue > 0) {
       setScrollValue(scrollValue - 1);
       cameraRef.current.fov -= 0.1958;
       orbitRef.current.target.y += 0.0048;
@@ -265,53 +310,59 @@ export default function Index() {
         overflowX: "hidden",
       }}
       onWheel={scrollFunction}
-      onTouchStart={(e) => lastY = e.touches[0].clientY}
-      onTouchMove={touchScroll}
-      onTouchEnd={(e) => lastY = null}
+      // onTouchEnd={(e) => lastY = null}
     >
-      {/* <audio
+      <FingeredDiv
+      style={{
+        height: "100vh",
+        width: "100vw",
+      }}
+        onPointerMove={scrollFunction}
+      >
+        {/* <audio
         id="intro_song"
         src="/intro.mp3"
         autoPlay={true}
         loop
         style={{ display: "none" }}
       /> */}
-      <span className={styles.bgspan}>PRANAV YELLAYI</span>
-      {/* <span id="audioSpan" className={styles.audioPlayer}>
+        <span className={styles.bgspan}>PRANAV YELLAYI</span>
+        {/* <span id="audioSpan" className={styles.audioPlayer}>
         Click anywhere to enable sound
       </span> */}
-      <span
-        onClick={cardStyle.onClick}
-        id="about-card"
-        className={styles.cardDiv}
-        style={{ display: cardStyle.display }}
-      ></span>
-      <span className={styles.scrollDown}>
-        Scroll down{" "}
-        <span>
-          <MdOutlineKeyboardDoubleArrowDown size={22} />
+        <span
+          onClick={cardStyle.onClick}
+          id="about-card"
+          className={styles.cardDiv}
+          style={{ display: cardStyle.display }}
+        ></span>
+        <span className={styles.scrollDown}>
+          Scroll down{" "}
+          <span>
+            <MdOutlineKeyboardDoubleArrowDown size={22} />
+          </span>
         </span>
-      </span>
-      <Canvas shadows="percentage">
-        <OrbitControls
-          ref={orbitRef}
-          enableRotate={false}
-          enableZoom={false}
-          target={[0, 2, 0]}
-        />
-        <ambientLight intensity={2} />
-        <directionalLight position={[-1, 0, 0]} intensity={3} />
-        <Character meshRef={meshRef} />
-        <CustomGeometryParticles count={200} points={points} />
-        {/* <CustomGeometryParticles count={500} /> */}
-        <PerspectiveCamera
-          makeDefault
-          fov={10}
-          aspect={1.77}
-          position={[0.2, 0, 3]}
-          ref={cameraRef}
-        />
-      </Canvas>
+        <Canvas shadows="percentage">
+          <OrbitControls
+            ref={orbitRef}
+            enableRotate={false}
+            enableZoom={false}
+            target={[0, 2, 0]}
+          />
+          <ambientLight intensity={2} />
+          <directionalLight position={[-1, 0, 0]} intensity={3} />
+          <Character meshRef={meshRef} />
+          <CustomGeometryParticles count={200} points={points} />
+          {/* <CustomGeometryParticles count={500} /> */}
+          <PerspectiveCamera
+            makeDefault
+            fov={10}
+            aspect={1.77}
+            position={[0.2, 0, 3]}
+            ref={cameraRef}
+          />
+        </Canvas>
+      </FingeredDiv>
     </div>
   );
 }

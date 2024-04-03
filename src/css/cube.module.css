@@ -9,6 +9,7 @@
   justify-items: centre;
   justify-content: centre;
   gap: 8px;
+  z-index: 100;
 }
 
 .audioPlayer {
