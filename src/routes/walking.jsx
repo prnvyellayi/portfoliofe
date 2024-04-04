@@ -1,6 +1,6 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import {
-  MeshReflectorMaterial,
+  // MeshReflectorMaterial,
   OrbitControls,
   PerspectiveCamera,
   useAnimations,
@@ -60,7 +60,7 @@ export default function Index() {
       }, 10);
     };
 
-    await myLoop();
+    myLoop();
 
     setScrollValue(211);
 
@@ -163,61 +163,6 @@ export default function Index() {
     return true;
   };
 
-  let lastY = null;
-
-  const touchScroll = (event) => {
-    if (lastY && event.touches[0].screenY < lastY) {
-      if (meshRef.current.rotation.y >= 6.6) {
-        document.body.style.overflow = "scroll";
-        return;
-      }
-
-      document.body.style.overflow = "hidden";
-      let i = 0;
-      const myLoop = () => {
-        if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
-          setCardDiv();
-
-        cameraRef.current.fov += 0.1958;
-        orbitRef.current.target.y -= 0.0048;
-        cameraRef.current.updateProjectionMatrix();
-        meshRef.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
-        points.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
-        i++;
-        setScrollValue(scrollValue + 1);
-
-        setTimeout(() => {
-          if (i < 10) {
-            myLoop();
-          }
-        }, 10);
-      };
-      myLoop();
-    } else if (lastY && event.touches[0].screenY > lastY) {
-      let i = 10;
-      const myLoop = () => {
-        if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
-          setCardDiv();
-
-        cameraRef.current.fov -= 0.1958;
-        orbitRef.current.target.y += 0.0048;
-        cameraRef.current.updateProjectionMatrix();
-        meshRef.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
-        points.current.rotation.y = 0.16 * (cameraRef.current.fov - 10);
-        i--;
-        setScrollValue(scrollValue - 1);
-
-        setTimeout(() => {
-          if (i > 0) {
-            myLoop();
-          }
-        }, 10);
-      };
-      myLoop();
-    }
-    lastY = event.touches[0].screenY;
-  };
-
   const scrollFunction = (event) => {
     const movementY = event.hasOwnProperty('deltaY') ? event.deltaY : -event.movementY;
     if (meshRef.current && getCardDetails(meshRef.current.rotation.y))
@@ -307,10 +252,9 @@ export default function Index() {
         left: 0,
         zIndex: 10,
         display: "fixed",
-        overflowX: "hidden",
+        overflow: "scroll",
       }}
       onWheel={scrollFunction}
-      // onTouchEnd={(e) => lastY = null}
     >
       <FingeredDiv
       style={{
@@ -342,11 +286,12 @@ export default function Index() {
             <MdOutlineKeyboardDoubleArrowDown size={22} />
           </span>
         </span>
-        <Canvas shadows="percentage">
+        <Canvas shadows="percentage" onProgressCapture={(e) => console.log(e)}>
           <OrbitControls
             ref={orbitRef}
             enableRotate={false}
             enableZoom={false}
+            enablePan={false}
             target={[0, 2, 0]}
           />
           <ambientLight intensity={2} />
@@ -370,7 +315,9 @@ export default function Index() {
 function Character({ meshRef }) {
   const { scene } = useGLTF("/pranav_new.glb");
 
-  const { animations } = useGLTF("/Pranav_GLB2.glb");
+  const { animations } = useGLTF("/Pranav_GLB2.glb", (loader) => {
+   console.log(loader)
+  });
 
   const { actions, names } = useAnimations(animations, meshRef);
 
@@ -378,7 +325,7 @@ function Character({ meshRef }) {
     if (actions && names) {
       actions[names[0]].play();
     }
-  }, [actions, names]);
+  }, [actions, names, animations]);
 
   return (
     <primitive
@@ -387,7 +334,7 @@ function Character({ meshRef }) {
       rotation={[0.5, 0, 0]}
       // children-0-castShadow
     >
-      <MeshReflectorMaterial />
+      {/* <MeshReflectorMaterial /> */}
     </primitive>
   );
 }
