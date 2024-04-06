@@ -261,7 +261,7 @@ export default function Index() {
         height: "100vh",
         width: "100vw",
       }}
-        onPointerMove={scrollFunction}
+      onFingerMove={scrollFunction}
       >
         {/* <audio
         id="intro_song"
