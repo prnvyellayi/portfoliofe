@@ -294,9 +294,9 @@ export default function Index() {
             enablePan={false}
             target={[0, 2, 0]}
           />
-          <ambientLight intensity={2} />
-          <directionalLight position={[-1, 0, 0]} intensity={3} />
-          <Character meshRef={meshRef} />
+          <ambientLight intensity={1.5} />
+          <directionalLight position={[-0.5, 1, 0]} intensity={5} />
+          <Character id="pranavChar" meshRef={meshRef} />
           <CustomGeometryParticles count={200} points={points} />
           {/* <CustomGeometryParticles count={500} /> */}
           <PerspectiveCamera
